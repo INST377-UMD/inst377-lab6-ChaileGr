@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <p> Map of US</p>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin=""/>
+    <style>
+        #map {
+            height: 300px; 
+        }
+    </style>
+</head>
+<body>
+
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+    <script>
+        var map = L.map('map').setView([37.8, -96], 4);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+
+        var marker = L.marker([30.964, -98.992]).addTo(map);
+        marker.bindPopup('San Saba').openPopup();
+        var marker = L.marker([32.885, -96.188]).addTo(map);
+        marker.bindPopup('District 3').openPopup();
+        var marker = L.marker([32.178, -93.386]).addTo(map);
+        marker.bindPopup('District 3').openPopup();
+        
+        
+</script>
+
+ <body>
+  <h4> Marker 1:Latitude: 30.964, Longitude:- 98.992</h4>
+  <h6>Locality: San Saba</h6>
+ <h4> Marker 2:Latitude: 32.885, Longitude:- 96.188 </h4>
+  <h6>Locality: District 3</h6>
+ <h4> Marker 3: Latitude: 32.178, Longitude:- 93.386 </h4>
+  <h6>Locality: District 3</h6>
+
+ <script async defer 
+    src= https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en
+</head>
+
+</body>
+</html>
